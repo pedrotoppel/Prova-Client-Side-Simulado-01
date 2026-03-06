@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>De Boas</title>
 </head>
+
 <body class="flex justify-center">
-    <section class="flex flex-col justify-between items-center h-[480px] w-[320px] p-10 border">
-
-        <audio src="">
-            <source src="audio/meditacao.mp3" type="audio/mpeg">
-        </audio>
-
+    <section class="flex flex-col items-center h-[480px] w-[320px] border">
+        <!-- ============================== BOTAO SAIR ============================== -->
+        <section class="flex justify-end h-[40px] w-full p-2">
+            <button onclick="goToHome()" class="cursor-pointer">
+                <img src="img/icon/close.png" class="flex h-6 w-6 items-center justify-center p-[3px]"
+                    alt="Botao voltar">
+            </button>
+        </section>
+        <!-- =========================== IMAGEM ANIMADA ================================= -->
+        <section class="bg-gray-400 flex h-[200px] w-[250px] m-1">
+            <img src="" alt="IMAGEM COM ANIMAÇÃO">
+        </section>
+        <!-- ======================= BARRA AUDIO ========================== -->
+        <section class="flex flex-col w-[270px] h-[50px]">
+            <div class="flex p-1 justify-between w-full">
+                <h2 class="flex text-sm" id="tempoPercorrido">0:20</h2>
+                <h2 class="flex text-sm" id="tempoRestante"><span>-</span>0:40</h2>
+            </div>
+            <div class="flex border h-[20px] w-full">
+                <div class="flex bg-red-200 h-[14px] w-[33%] mt-[2px] transition duration-1000" id="barraDeProgresso">
+                </div> <!-- ALTERAR O W PARA MUDAR BARRA DE PROGRESSO -->
+            </div>
+        </section>
+        <!-- ======================== BOTAO PLAY ==================================== -->
+        <section class="flex flex-col w-[270px] h-[90px] justify-center items-center">
+            <button onclick="pausePlayButton()"
+                class="flex h-[80px] w-[80px] justify-center items-center rounded-full border cursor-pointer"
+                id="botaoPlay">
+                <img src="img/icon/player/play.png" class="flex h-[50px] w-[50px] justify-center items-center"
+                    alt="Play"> <!-- BOTAO PAUSE ADICIONAR (mb-5 h-full w-auto) -->
+            </button>
+        </section>
+        <!-- ============================== NOME OBJETIVO ========================================== -->
+        <section class="flex flex-col justify-center items-center">
+            <p class="text-sm ml-1">OBJETIVO</p>
+            <div class="flex border h-[60px] w-[150px] items-center justify-center rounded-sm p-1 mt-1 bg-white">
+                <p class="flex font-semibold text-center text-lg">NOME DO OBJETIVO</p>
+            </div>
+        </section>
     </section>
+
+    <audio id="audioPlayer" src="audio/meditacao.mp3" preload="auto"></audio>
+
+    <script src="js/player.js"></script>
 </body>
+
 </html>

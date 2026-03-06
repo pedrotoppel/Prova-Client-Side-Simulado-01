@@ -11,20 +11,24 @@
 <body class="flex justify-center">
     <div class="flex flex-col h-[480px] w-[320px] border m-0 p-0">
         <section class="flex justify-between h-[60px] w-full p-2 border-b-2">
-            <button onclick="voltar()" class="cursor-pointer" id="voltar">
-                <img src="img/icon/arrow.png" class="flex h-6 rotate-180 items-center justify-center" alt="Botao voltar">
+            <button onclick="goToVoltar()" class="cursor-pointer">
+                <img src="img/icon/arrow.png" class="flex h-6 rotate-180 items-center justify-center"
+                    alt="Botao voltar">
             </button>
             <h1 class="flex text-2xl justify-center items-center">OBJETIVOS</h1>
-            <button>
+            <button onclick="goToStats()" class="cursor-pointer">
                 <img src="img/icon/stats.png" class="flex h-7 items-center justify-center" alt="Estatisticas">
             </button>
         </section>
-
+        <!-- =============================== BOB 1 ============================ -->
         <section>
-            <button class="flex h-[140px] w-full bg-green-200 p-3 justify-between items-center gap-3 cursor-pointer">
+            <button onclick="goToPlayerBob1()"
+                class="flex h-[140px] w-full bg-green-200 p-3 justify-between items-center gap-3 cursor-pointer">
                 <div class="flex gap-3 items-end">
-                    <img src="img/BobObjetivos/BobSussa.PNG" class="p-2 h-[120px] w-[110px]"
-                        alt="ImagemBOBteste">
+                    <div class="p-2 h-[120px] w-[150px]">
+                        <img src="img/BobObjetivos/BobSussa.PNG" class="h-full transition duration-1000"
+                            alt="ImagemBOBteste" id="Bob1">
+                    </div>
                     <div class="flex flex-col ">
                         <h1 class="text-left text-xl leading-none mt-7">FICAR<br>SUSSA</h1>
                         <p class="text-xs text-left w-auto mt-2 mb-1">Relaxar, reduzir ansiedade e o stress</p>
@@ -33,24 +37,32 @@
                 <img src="img/icon/arrow.png" class="flex h-9 items-center justify-center" alt="Botao avançar">
             </button>
 
-            <!-- ======================================================== -->
-            <button class="flex h-[140px] w-full bg-red-200 p-3 justify-between items-center gap-3 cursor-pointer">
+            <!-- ========================== BOB 2 ============================== -->
+            <button onclick="goToPlayerBob2()"
+                class="flex h-[140px] w-full bg-red-200 p-3 justify-between items-center gap-3 cursor-pointer">
                 <div class="flex gap-3 items-end">
-                    <img src="img/BobObjetivos/BobOlhaFoca.PNG" class="p-2 h-[120px] w-[110px]"
-                        alt="ImagemBOBteste">
+                    <div class="p-2 h-[120px] w-[110px]">
+                        <img src="img/BobObjetivos/BobOlhaFoca.PNG"
+                            class="flex h-[100%] justify-center items-center transition duration-1000"
+                            alt="ImagemBOBteste" id="Bob2">
+                    </div>
                     <div class="flex flex-col ">
-                        <h1 class="text-left text-xl leading-none mt-7">OLHA<br>A FOCA!</h1>
+                        <h1 class="text-left text-xl leading-none mt-7">FOCAR<br>NA TAREFA</h1>
                         <p class="text-xs text-left w-auto mt-4 mb-1">Aumentar o Foco</p>
                     </div>
                 </div>
                 <img src="img/icon/arrow.png" class="flex h-9 items-center justify-center" alt="Botao avançar">
             </button>
 
-            <!-- ====================================================================== -->
-            <button class="flex h-[140px] w-full bg-blue-200 p-3 justify-between items-center gap-3 cursor-pointer">
+            <!-- =========================== BOB 3 =========================================== -->
+            <button onclick="goToPlayerBob3()"
+                class="flex h-[140px] w-full bg-blue-200 p-3 justify-between items-center gap-3 cursor-pointer">
                 <div class="flex gap-3 items-end">
-                    <img src="img/BobObjetivos/BobDormir.PNG" class="p-2 h-[120px] w-[110px]"
-                        alt="ImagemBOBteste">
+                    <div class="p-2 h-[120px] w-[110px]">
+                        <img src="img/BobObjetivos/BobDormir.PNG"
+                            class="flex h-[100%] justify-center items-center transition duration-1200"
+                            alt="ImagemBOBteste" id="Bob3">
+                    </div>
                     <div class="flex flex-col ">
                         <h1 class="text-left text-xl leading-none mt-7">DORMIR<br>DE BOAS</h1>
                         <p class="text-xs text-left w-auto mt-4 mb-1">Dormir Melhor</p>
