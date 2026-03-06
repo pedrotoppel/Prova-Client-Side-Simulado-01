@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>DeBoas</title>
+</head>
+
+<body class="flex justify-center">
+    <div class="flex flex-col h-[480px] w-[320px] border m-0 p-0">
+        <section class="flex justify-between h-[60px] w-full p-2 border-b-2">
+            <button onclick="voltar()" class="cursor-pointer" id="voltar">
+                <img src="img/icon/arrow.png" class="flex h-6 rotate-180 items-center justify-center" alt="Botao voltar">
+            </button>
+            <h1 class="flex text-2xl justify-center items-center">OBJETIVOS</h1>
+            <button>
+                <img src="img/icon/stats.png" class="flex h-7 items-center justify-center" alt="Estatisticas">
+            </button>
+        </section>
+
+        <section>
+            <button class="flex h-[140px] w-full bg-green-200 p-3 justify-between items-center gap-3 cursor-pointer">
+                <div class="flex gap-3 items-end">
+                    <img src="img/BobObjetivos/BobSussa.PNG" class="p-2 h-[120px] w-[110px]"
+                        alt="ImagemBOBteste">
+                    <div class="flex flex-col ">
+                        <h1 class="text-left text-xl leading-none mt-7">FICAR<br>SUSSA</h1>
+                        <p class="text-xs text-left w-auto mt-2 mb-1">Relaxar, reduzir ansiedade e o stress</p>
+                    </div>
+                </div>
+                <img src="img/icon/arrow.png" class="flex h-9 items-center justify-center" alt="Botao avançar">
+            </button>
+
+            <!-- ======================================================== -->
+            <button class="flex h-[140px] w-full bg-red-200 p-3 justify-between items-center gap-3 cursor-pointer">
+                <div class="flex gap-3 items-end">
+                    <img src="img/BobObjetivos/BobOlhaFoca.PNG" class="p-2 h-[120px] w-[110px]"
+                        alt="ImagemBOBteste">
+                    <div class="flex flex-col ">
+                        <h1 class="text-left text-xl leading-none mt-7">OLHA<br>A FOCA!</h1>
+                        <p class="text-xs text-left w-auto mt-4 mb-1">Aumentar o Foco</p>
+                    </div>
+                </div>
+                <img src="img/icon/arrow.png" class="flex h-9 items-center justify-center" alt="Botao avançar">
+            </button>
+
+            <!-- ====================================================================== -->
+            <button class="flex h-[140px] w-full bg-blue-200 p-3 justify-between items-center gap-3 cursor-pointer">
+                <div class="flex gap-3 items-end">
+                    <img src="img/BobObjetivos/BobDormir.PNG" class="p-2 h-[120px] w-[110px]"
+                        alt="ImagemBOBteste">
+                    <div class="flex flex-col ">
+                        <h1 class="text-left text-xl leading-none mt-7">DORMIR<br>DE BOAS</h1>
+                        <p class="text-xs text-left w-auto mt-4 mb-1">Dormir Melhor</p>
+                    </div>
+                </div>
+                <img src="img/icon/arrow.png" class="flex h-9 items-center justify-center" alt="Botao avançar">
+            </button>
+
+        </section>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>
