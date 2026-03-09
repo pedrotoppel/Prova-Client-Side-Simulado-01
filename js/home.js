@@ -2,11 +2,17 @@ const deBoas = document.getElementById("deBoas");
 const Bob1 = document.getElementById("Bob1");
 const Bob2 = document.getElementById("Bob2");
 const Bob3 = document.getElementById("Bob3");
+const acesso = localStorage.getItem('PrimeiroAcesso');
 
+// Verificação LocalStorage
+if(acesso == null){
+    window.location.href = "welcome1.html";
+};
 // REDIRECIONAMENTO
 
 function goToVoltar() {
     window.location.href = "welcome1.html";
+    localStorage.setItem('PrimeiroAcesso', "0")
 }
 
 function goToStats() {
@@ -15,14 +21,17 @@ function goToStats() {
 
 function goToPlayerBob1() {
     window.location.href = "player.html";
+    localStorage.setItem("BobSelecionado", "1");
 }
 
 function goToPlayerBob2() {
     window.location.href = "player.html";
+    localStorage.setItem("BobSelecionado", "2");
 }
 
 function goToPlayerBob3() {
     window.location.href = "player.html";
+    localStorage.setItem("BobSelecionado", "3");
 }
 
 // ANIMAÇÃO
@@ -36,14 +45,16 @@ let rotate = 0;
 
 function animarBob1() {
 
+    Bob1.classList.remove("rotate-10", "-rotate-10")
+
     if (rotate == 0) {
-        Bob1.classList.toggle("rotate-10");
+        Bob1.classList.add("rotate-10");
         rotate = 1;
 
         setTimeout(animarBob1, 1000);
 
     } else {
-        Bob1.classList.toggle("-rotate-10");
+        Bob1.classList.add("-rotate-10");
         rotate = 0;
 
         setTimeout(animarBob1, 1000);
@@ -52,22 +63,12 @@ function animarBob1() {
 animarBob1();
 
 //===== BOB 2 ========
-let zoom = 0;
 
 function animarBob2() {
 
-    if (zoom == 0) {
-        Bob2.classList.toggle("-translate-x-2");
-        zoom = 1;
+    Bob2.classList.toggle("-translate-x-3");
+    setTimeout(animarBob2, 1000);
 
-        setTimeout(animarBob2, 1000);
-
-    } else {
-        Bob2.classList.toggle("translate-x-1");
-        rotate = 0;
-
-        setTimeout(animarBob2, 1000);
-    }
 }
 
 animarBob2();

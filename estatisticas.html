@@ -13,10 +13,10 @@
     <section class="flex h-[480px] flex-col w-[320px] border">
         <div class="flex h-[150px] w-[320px] border-b-1">
             <button onclick="voltar()" class="cursor-pointer h-6 p-2 mt-1">
-                <img src="img/icon/arrow.png" class="flex h-6 rotate-180 self-center justify-center" alt="Botao voltar">
+                <img src="img/icon/arrow.png" class="flex h-6 rotate-180 self-center justify-center hover:bg-gray-300 rounded-md" alt="Botao voltar">
             </button>
             <div class="flex flex-col justify-between items-center p-4 ml-5">
-                <img src="img/avatar/BobFeliz.png" class="border h-[80px] w-[80px] rounded-full" alt="AvatarPreguiça">
+                <img src="img/avatar/BobFeliz.png" class="border h-[80px] w-[80px] rounded-full transition duration-1000" alt="AvatarPreguiça" id="imagem">
                 <h2 class="">MINHAS ESTATÍSTICAS</h2>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     <p class="text-sm ml-1">MEDITAÇÕES REALIZADAS</p>
                 </div>
                 <div class="flex border h-[60px] w-[150px] items-center justify-center rounded-sm p-1 mt-1 bg-white">
-                    <h1 class="text-6xl font-semibold mb-1" id="numeroMeditacoes">3</h1>
+                    <h1 class="text-6xl font-semibold mb-1" id="numeroMeditacoes"></h1>
                     <p class="flex self-end ml-1 font-semibold text-lg">sessões</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <p class="text-sm ml-1">TEMPO TOTAL MEDITANDO</p>
                 </div>
                 <div class="flex border h-[60px] w-[150px] items-center justify-center rounded-sm p-1 mt-1 bg-white">
-                    <time class="flex h-full w-full justify-center items-center text-truncate text-5xl font-semibold">30:30</time>
+                    <time class="flex h-full w-full justify-center items-center text-truncate text-5xl font-semibold" id="tempoTotalMeditando"></time>
                 </div>
             </div>
             
@@ -51,7 +51,7 @@
                     <p class="text-sm ml-1">OBJETIVO MAIS UTILIZADO</p>
                 </div>
                 <div class="flex border h-[60px] w-[150px] items-center justify-center rounded-sm p-1 mt-1 bg-white">
-                    <p class="flex font-semibold text-center text-lg">NOME DO OBJETIVO</p>
+                    <p class="flex font-semibold text-center text-lg" id="objetivoMaisUsado"></p>
                 </div>
             </div>            
 
