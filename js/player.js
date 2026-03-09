@@ -26,6 +26,12 @@ const background = document.getElementById('background');
 const nomeObjetivo = document.getElementById('objetivo');
 const imagemAnimada = document.getElementById('imagemBobPlayer');
 const BobSelecionado = localStorage.getItem("BobSelecionado");
+// ANIMAÇÃO ENTRADA
+const botaoSair = document.getElementById('botaoSair');
+const imagemComAnimacaoPlayer = document.getElementById('imagemComAnimacaoPlayer');
+const barraAudio = document.getElementById('barraAudio');
+const botaoMusica = document.getElementById('botaoMusica');
+const nomeObjetivoPrincipal = document.getElementById ('nomeObjetivoPrincipal');
 let minutos;
 let tempoMeditadoNaSessao;
 let tempoMeditado;
@@ -42,19 +48,25 @@ audio.volume = 0.2;
 // Aplica o estilo baseado na escolha
 switch (BobSelecionado) {
     case "1":
-        estilizarBob1();
-        animarBob1();
-        localStorage.setItem("sessoesPercorridas", 0);
+        setTimeout(() => {
+            estilizarBob1();
+            animarBob1();
+            localStorage.setItem("sessoesPercorridas", 0);
+        },2000);
         break;
     case "2":
-        estilizarBob2();
-        animarBob2();
-        localStorage.setItem("sessoesPercorridas", 0);
+        setTimeout(() => {
+            estilizarBob2();
+            animarBob2();
+            localStorage.setItem("sessoesPercorridas", 0);
+        }, 2000);
         break;
     case "3":
-        estilizarBob3();
-        animarBob3();
-        localStorage.setItem("sessoesPercorridas", 0);
+        setTimeout(() => {
+            estilizarBob3();
+            animarBob3();
+            localStorage.setItem("sessoesPercorridas", 0);
+        }, 2000);
         break;
     default:
         goToHome(); // redireciona se nenhum Bob foi selecionado
@@ -123,7 +135,7 @@ function updateProgress() {
 
 // ======================== BOB 1 ========================
 function animarBob1() {
-    imagem.classList.remove("-rotate-10", "rotate-10");
+    imagemAnimada.classList.remove("-rotate-10", "rotate-10");
 
     if (rotate == 0) {
         imagemAnimada.classList.add("rotate-10");
@@ -176,12 +188,26 @@ function animarBob3() {
     setTimeout(animarBob3, 1000);
 }
 
+// ======================== ANIMAR ENTRADA ========================
+
+function animarEntrada(){
+    setTimeout(() => {
+        botaoSair.classList.remove('opacity-0');
+        imagemComAnimacaoPlayer.classList.remove('opacity-0');
+        barraAudio.classList.remove('opacity-0');
+        botaoMusica.classList.remove('opacity-0');
+        nomeObjetivoPrincipal.classList.remove('opacity-0');
+    },300);
+
+}
+
 // ======================== FUNÇÕES DE ESTILIZAÇÃO ========================
 function estilizarBob1() {
     background.classList.add('bg-green-200');
     barraProgresso.classList.add('bg-green-500');
     nomeObjetivo.textContent = "FICAR SUSSA";
     imagemAnimada.src = "img/BobObjetivos/BobSussa.PNG"
+    animarEntrada();
 }
 
 function estilizarBob2() {
@@ -189,6 +215,7 @@ function estilizarBob2() {
     barraProgresso.classList.add('bg-red-500');
     nomeObjetivo.textContent = "FOCAR NA TAREFA";
     imagemAnimada.src = "img/BobObjetivos/BobOlhaFoca.PNG";
+    animarEntrada();
 }
 
 function estilizarBob3() {
@@ -196,6 +223,9 @@ function estilizarBob3() {
     barraProgresso.classList.add('bg-blue-500');
     nomeObjetivo.textContent = "DORMIR DE BOAS";
     imagemAnimada.src = "img/BobObjetivos/BobDormir.PNG";
+    animarEntrada();
 }
+
+// =================================== Atualiza a barra de progesso automaticamente ================================
 
 audio.addEventListener('timeupdate', updateProgress);

@@ -11,19 +11,19 @@
 <body class="flex justify-center">
     <section class="flex flex-col items-center h-[480px] w-[320px] border" id="background">
         <!-- ============================== BOTAO SAIR ============================== -->
-        <section class="flex justify-end h-[40px] w-full p-2">
+        <section class="flex justify-end h-[40px] w-full p-2 transition duration-1000 opacity-0" id="botaoSair">
             <button onclick="goToHome()" class="cursor-pointer">
                 <img src="img/icon/close.png" class="flex h-6 w-6 items-center justify-center p-[3px] hover:bg-white rounded-md"
                     alt="Botao voltar">
             </button>
         </section>
         <!-- =========================== IMAGEM ANIMADA ================================= -->
-        <section class="bg-white flex h-[200px] w-[250px] m-1 rounded-lg">
+        <section class="bg-white flex h-[200px] w-[250px] m-1 rounded-lg transition duration-1000 opacity-0" id="imagemComAnimacaoPlayer">
             <img src="" id="imagemBobPlayer" alt="IMAGEM COM ANIMAÇÃO"
                 class="flex h-[100%] ml-9 justify-center items-center transition duration-1000">
         </section>
         <!-- ======================= BARRA AUDIO ========================== -->
-        <section class="flex flex-col w-[270px] h-[50px]">
+        <section class="flex flex-col w-[270px] h-[50px] transition duration-1000 opacity-0" id="barraAudio">
             <div class="flex p-1 justify-between w-full">
                 <h2 class="flex text-sm" id="tempoPercorrido">0:00</h2>
                 <h2 class="flex text-sm" id="tempoRestante"><span>-</span>1:00</h2>
@@ -34,7 +34,7 @@
             </div>
         </section>
         <!-- ======================== BOTAO PLAY ==================================== -->
-        <section class="flex flex-col w-[270px] h-[90px] justify-center items-center">
+        <section class="flex flex-col w-[270px] h-[90px] justify-center items-center transition duration-1000 opacity-0" id="botaoMusica">
             <button onclick="pausePlayButton()"
                 class="flex bg-white h-[80px] w-[80px] justify-center items-center rounded-full border cursor-pointer hover:bg-gray-200"
                 id="botaoPlay">
@@ -43,7 +43,7 @@
             </button>
         </section>
         <!-- ============================== NOME OBJETIVO ========================================== -->
-        <section class="flex flex-col justify-center items-center">
+        <section class="flex flex-col justify-center items-center transition duration-1000 opacity-0" id="nomeObjetivoPrincipal">
             <p class="text-sm ml-1">OBJETIVO</p>
             <div class="flex border h-[60px] w-[150px] items-center justify-center rounded-sm p-1 mt-1 bg-white">
                 <p class="flex font-semibold text-center text-lg" id="objetivo"></p>

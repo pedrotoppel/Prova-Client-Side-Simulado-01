@@ -20,25 +20,31 @@ function goToStats() {
 }
 
 function goToPlayerBob1() {
-    window.location.href = "player.html";
-    localStorage.setItem("BobSelecionado", "1");
+    animarSaidaBob1();
+    setTimeout(() => {
+        window.location.href = "player.html";
+        localStorage.setItem("BobSelecionado", "1");
+    },2500);
 }
 
 function goToPlayerBob2() {
-    window.location.href = "player.html";
-    localStorage.setItem("BobSelecionado", "2");
+    animarSaidaBob2();
+    setTimeout(() => {
+        window.location.href = "player.html";
+        localStorage.setItem("BobSelecionado", "2");
+    },2500)
 }
 
 function goToPlayerBob3() {
-    window.location.href = "player.html";
+    animarSaidaBob3();
+    setTimeout(() => {
+        window.location.href = "player.html";
     localStorage.setItem("BobSelecionado", "3");
+    },2500);
+    
 }
 
 // ANIMAÇÃO
-
-//const Bob1 = document.getElementById("Bob1");
-//const Bob2 = document.getElementById("Bob2");
-
 
 //===== BOB 1 ========
 let rotate = 0;
@@ -103,3 +109,62 @@ function animarBob3() {
 }
 
 animarBob3();
+
+// =============================== Animação de Saida =============================
+
+const header = document.getElementById('header');
+const buttonBob1 = document.getElementById('buttonBob1');
+const buttonBob2 = document.getElementById('buttonBob2');
+const buttonBob3 = document.getElementById('buttonBob3');
+const fundoPrincipal = document.getElementById('fundoPrincipal');
+
+// ========================== Saida Bob 1 =================================
+
+function animarSaidaBob1(){
+
+    buttonBob2.classList.add('opacity-0');
+    buttonBob3.classList.add('opacity-0');
+    header.classList.add('opacity-0');
+
+    setTimeout(() => {
+        fundoPrincipal.classList.add('bg-green-200');
+        setTimeout(() => {
+            buttonBob1.classList.add('opacity-0');
+        },300)
+    },1000)
+    
+}
+
+// ========================== Saida Bob 2 =================================
+
+function animarSaidaBob2(){
+
+    buttonBob1.classList.add('opacity-0');
+    buttonBob3.classList.add('opacity-0');
+    header.classList.add('opacity-0');
+
+    setTimeout(() => {
+        fundoPrincipal.classList.add('bg-red-200');
+        setTimeout(() => {
+            buttonBob2.classList.add('opacity-0');
+        },300)
+    },1000)
+    
+}
+
+// ========================== Saida Bob 3 =================================
+
+function animarSaidaBob3(){
+
+    buttonBob1.classList.add('opacity-0');
+    buttonBob2.classList.add('opacity-0');
+    header.classList.add('opacity-0');
+
+    setTimeout(() => {
+        fundoPrincipal.classList.add('bg-blue-200');
+        setTimeout(() => {
+            buttonBob3.classList.add('opacity-0');
+        },300)
+    },1000)
+    
+}
