@@ -9,7 +9,7 @@ function goToHome() {
     minutos = Number(localStorage.getItem("sessoesPercorridas"));
 
     segundos = segundos + (minutos * 60);
-    
+
     total += segundos;
 
     localStorage.removeItem("TempoMeditadoTotal");
@@ -31,7 +31,7 @@ const botaoSair = document.getElementById('botaoSair');
 const imagemComAnimacaoPlayer = document.getElementById('imagemComAnimacaoPlayer');
 const barraAudio = document.getElementById('barraAudio');
 const botaoMusica = document.getElementById('botaoMusica');
-const nomeObjetivoPrincipal = document.getElementById ('nomeObjetivoPrincipal');
+const nomeObjetivoPrincipal = document.getElementById('nomeObjetivoPrincipal');
 let minutos;
 let tempoMeditadoNaSessao;
 let tempoMeditado;
@@ -48,25 +48,19 @@ audio.volume = 0.2;
 // Aplica o estilo baseado na escolha
 switch (BobSelecionado) {
     case "1":
-        setTimeout(() => {
-            estilizarBob1();
-            animarBob1();
-            localStorage.setItem("sessoesPercorridas", 0);
-        },2000);
+        estilizarBob1();
+        animarBob1();
+        localStorage.setItem("sessoesPercorridas", 0);
         break;
     case "2":
-        setTimeout(() => {
-            estilizarBob2();
-            animarBob2();
-            localStorage.setItem("sessoesPercorridas", 0);
-        }, 2000);
+        estilizarBob2();
+        animarBob2();
+        localStorage.setItem("sessoesPercorridas", 0);
         break;
     case "3":
-        setTimeout(() => {
-            estilizarBob3();
-            animarBob3();
-            localStorage.setItem("sessoesPercorridas", 0);
-        }, 2000);
+        estilizarBob3();
+        animarBob3();
+        localStorage.setItem("sessoesPercorridas", 0);
         break;
     default:
         goToHome(); // redireciona se nenhum Bob foi selecionado
@@ -91,42 +85,42 @@ function updateProgress() {
     const currentTime = audio.currentTime;
     if (!duration) return; // evita NaN no carregamento inicial
 
-    if(currentTime <= duration){    
+    if (currentTime <= duration) {
         const progress = (currentTime / duration) * 100;
         barraProgresso.style.width = progress + '%';
-    
+
         // Atualiza tempo percorrido
         const minutosPercorridos = Math.floor(currentTime / duration);
         const segundosPercorridos = Math.floor(currentTime % duration);
         localStorage.removeItem("SegundosPercorridos");
         localStorage.setItem("SegundosPercorridos", segundosPercorridos);
         tempoPercorrido.textContent = `${minutosPercorridos}:${segundosPercorridos < 10 ? '0' + segundosPercorridos : segundosPercorridos}`;
-    
+
         // Atualiza tempo restante
         const minutosRestantes = Math.floor((duration - currentTime) / duration);
         const segundosRestantes = Math.floor((duration - currentTime) % duration);
         tempoRestante.textContent = `-${minutosRestantes}:${segundosRestantes < 10 ? '0' + segundosRestantes : segundosRestantes}`;
-    }else{
+    } else {
         audio.currentTime = 0;
         switch (BobSelecionado) {
             case "1":
                 sessoesConcluidas = localStorage.getItem("sessoesBob1");
-                sessoesConcluidas ++;
+                sessoesConcluidas++;
                 localStorage.setItem("sessoesBob1", sessoesConcluidas);
                 break;
             case "2":
                 sessoesConcluidas = localStorage.getItem("sessoesBob2");
-                sessoesConcluidas ++;
+                sessoesConcluidas++;
                 localStorage.setItem("sessoesBob2", sessoesConcluidas);
                 break;
             case "3":
                 sessoesConcluidas = localStorage.getItem("sessoesBob3");
-                sessoesConcluidas ++;
+                sessoesConcluidas++;
                 localStorage.setItem("sessoesBob3", sessoesConcluidas);
                 break;
         }
         let sessoesPercorridas = localStorage.getItem("sessoesPercorridas");
-        sessoesPercorridas ++;
+        sessoesPercorridas++;
         localStorage.setItem("sessoesPercorridas", sessoesPercorridas);
     }
 
@@ -190,14 +184,14 @@ function animarBob3() {
 
 // ======================== ANIMAR ENTRADA ========================
 
-function animarEntrada(){
+function animarEntrada() {
     setTimeout(() => {
         botaoSair.classList.remove('opacity-0');
         imagemComAnimacaoPlayer.classList.remove('opacity-0');
         barraAudio.classList.remove('opacity-0');
         botaoMusica.classList.remove('opacity-0');
         nomeObjetivoPrincipal.classList.remove('opacity-0');
-    },300);
+    }, 300);
 
 }
 
